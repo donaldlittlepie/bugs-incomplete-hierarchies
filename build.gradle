@@ -1,0 +1,31 @@
+apply from: 'buildsystem/dependencies.gradle'
+
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.2.3'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:0.12.1218'
+    }
+}
+
+allprojects {
+    ext {
+        androidApplicationId = 'com.wontondon.app.test'
+        androidVersionCode = 1
+        androidVersionName = '1.0'
+        testInstrumentationRunner = 'android.support.test.runner.AndroidJUnitRunner'
+        testApplicationId = 'com.wontondon.app.test.test'
+    }
+}
+
+subprojects {
+}
+
+task wrapper(type: Wrapper) {
+    description 'Creates the gradle wrapper'
+    gradleVersion '2.5'
+}

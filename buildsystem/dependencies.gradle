@@ -1,0 +1,35 @@
+allprojects {
+    repositories {
+        jcenter()
+        mavenCentral() // not sure if this is needed,
+    }
+}
+
+ext {
+    // Android
+    androidBuildToolsVersion = '22.0.1'
+    androidMinSdkVersion = 20
+    androidTargetSdkVersion = 21
+    androidCompileSdkVersion = 21
+
+    // Libraries
+    appCompatVersion = '21.0.2'
+    cardViewVersion = '21.0.+'
+    daggerVersion = '2.0.1'
+    javaxAnnotationVersion = '1.2'
+    kotlinVersion = '0.12.1218'
+    recyclerViewVersion = '21.0.+'
+    rxJavaVersion = '1.0.12'
+    rxAndroidVersion = '0.25.0'
+
+
+    presentationDependencies = [
+            appCompat      : "com.android.support:appcompat-v7:$appCompatVersion",
+            cardView       : "com.android.support:cardview-v7:$cardViewVersion",
+            daggerCompiler : "com.google.dagger:dagger-compiler:$daggerVersion",
+            dagger         : "com.google.dagger:dagger:$daggerVersion",
+            javaxAnnotation: "javax.annotation:javax.annotation-api:$javaxAnnotationVersion",
+            kotlin         : "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion",
+            recyclerView   : "com.android.support:recyclerview-v7:$recyclerViewVersion",
+    ]
+}
